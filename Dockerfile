@@ -1,4 +1,4 @@
 FROM openjdk
 EXPOSE 8761
-ADD target/register-server.war registerserver.war
-ENTRYPOINT ["java","-jar","registerserver.war"]
+ADD target/register-server.war register-server.war
+ENTRYPOINT ["java","-jar","/register-server.war"]
