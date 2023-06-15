@@ -44,7 +44,7 @@ jobs:
     - name: Deploy with Docker Compose
       run: |
        docker-compose up -d
-       docker logs --follow register-server_registry-service_1
+#       docker logs --follow register-server_registry-service_1
     - name: Check application endpoint
       run: |
         # Wait for the application to start
