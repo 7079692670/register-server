@@ -50,7 +50,7 @@ jobs:
         sleep 10
 
         # Make a request to the application
-        response=$(curl -s -o /dev/null -w "%{http_code}" http://192.168.0.111:8761)
+        response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8761)
         if [[ $response == 200 ]]; then
           echo "Application is running successfully."
         else
