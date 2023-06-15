@@ -44,9 +44,20 @@ jobs:
     - name: Deploy with Docker Compose
       run: |
        docker-compose up -d
-    - name: Notify deployment status
-      if: always()
-      run: echo "Deployment completed ${{ job.status }}"
+    - name: Check application endpoint
+      run: |
+        # Wait for the application to start
+        sleep 10
+
+        # Make a request to the application
+        response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8761)
+        if [[ $response == 200 ]]; then
+          echo "Application is running successfully."
+        else
+          echo "Application failed to start. Status code: $response"
+          exit 1
+        fi
+    
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
    # - name: Update dependency graph
