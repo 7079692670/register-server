@@ -41,9 +41,9 @@ jobs:
          username: ${{ secrets.DOCKER_USERNAME }}
          password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Deploy with Docker Compose
-      run: |
-       docker-compose up -d
+#    - name: Deploy with Docker Compose
+#      run: |
+#       docker-compose up -d
 
     - name: Deploy to remote server
       uses: appleboy/ssh-action@master
@@ -51,7 +51,7 @@ jobs:
         host: ${{ secrets.SERVER_HOST }}
         port: ${{ secrets.SERVER_PORT }}
         username: ${{ secrets.SERVER_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd /home/sujit/Desktop/
           docker-compose up -d
