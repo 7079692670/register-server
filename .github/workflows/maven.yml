@@ -53,5 +53,5 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd /home/sujit/Desktop/
+          cd /home/Docker/TESTING/
           docker-compose up -d
