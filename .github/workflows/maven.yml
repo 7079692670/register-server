@@ -52,12 +52,4 @@ jobs:
         port: ${{ secrets.SERVER_PORT }}
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-          whoami
-          pwd
-          docker-compose down
-          docker-compose pull
-          docker-compose up --build -d
-          echo "Deployment Successfully"
-#          cd /home/Docker/TESTING/
-#          docker-compose up -d
+        script:  whoami
