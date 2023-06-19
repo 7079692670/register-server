@@ -53,5 +53,11 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd /home/Docker/TESTING/
-          docker-compose up -d
+          whoami
+          pwd
+          docker-compose down
+          docker-compose pull
+          docker-compose up --build -d
+          echo "Deployment Successfully"
+#          cd /home/Docker/TESTING/
+#          docker-compose up -d
