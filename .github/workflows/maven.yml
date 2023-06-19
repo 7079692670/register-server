@@ -44,22 +44,15 @@ jobs:
     - name: Deploy with Docker Compose
       run: |
        docker-compose up -d
-#       docker logs --follow register-server_registry-service_1
-    - name: Check application endpoint
-      run: |
-        # Wait for the application to start
-        sleep 10
 
-        # Make a request to the application
-        response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8761)
-        if [[ $response == 200 ]]; then
-          echo "Application is running successfully."
-        else
-          echo "Application failed to start. Status code: $response"
-          exit 1
-        fi
-    
-
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-   # - name: Update dependency graph
-    #  uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+    - name: Deploy to remote server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        port: ${{ secrets.SERVER_PORT }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd /home/sujit/Desktop/
+#          docker-compose pull
+          docker-compose up -d
