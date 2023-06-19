@@ -54,5 +54,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd /home/sujit/Desktop/
-          docker-compose pull
+#          docker-compose pull
           docker-compose up -d
