@@ -48,9 +48,9 @@ jobs:
         port: 2299
         username: javatesting
         password: d2p93nd?>#>w21e!@@
+      run: |
+        docker-compose up --build -d
         script: |
-          cd /home/javatesting/DOCKER/TESTING/
-          docker-compose up -d
           whoami
           echo "$HOST"
 
