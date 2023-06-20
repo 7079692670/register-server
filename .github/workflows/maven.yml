@@ -41,9 +41,6 @@ jobs:
          username: ${{ secrets.DOCKER_USERNAME }}
          password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Show USER And Password
-      run: |
-         echo ${{secrets.SERVER_USERNAME }}
 
     - name: Deploy to remote server
       uses: appleboy/ssh-action@master
