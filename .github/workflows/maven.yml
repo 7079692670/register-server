@@ -50,7 +50,7 @@ jobs:
         username: javatesting
         password: d2p93nd?>#>w21e!@@
         script: |
-          cd /home/javatesting/
+          cd .
           docker-compose up -d
           whoami
 
