@@ -50,6 +50,7 @@ jobs:
       uses: appleboy/ssh-action@v0.1.9
       with:
         run: |
+          
           echo "${{ secrets.SSH_PRIVATE_KEY }}"
         host: ${{ secrets.SERVER_HOST }}
         port: ${{ secrets.SERVER_PORT }}
