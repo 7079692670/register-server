@@ -53,4 +53,7 @@ jobs:
         port: ${{ secrets.SERVER_PORT }}
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script:  whoami
+        run: echo ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          whoami
+       
