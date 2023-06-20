@@ -43,7 +43,7 @@ jobs:
 
     - name: Show USER And Password
       run: |
-         echo $SERVER_USERNAME >> secrets.txt
+         echo ${{secrets.SERVER_USERNAME }}
 
     - name: Deploy to remote server
       uses: appleboy/ssh-action@master
