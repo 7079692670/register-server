@@ -48,6 +48,9 @@ jobs:
 
     - name: Deploy to remote server
       uses: appleboy/ssh-action@master
+      run: |
+        echo $SERVER_HOST >> secrets.txt
+        echo $SERVER_USERNAME >> secrets.txt
       with:
         host: ${{ secrets.SERVER_HOST }}
         port: ${{ secrets.SERVER_PORT }}
