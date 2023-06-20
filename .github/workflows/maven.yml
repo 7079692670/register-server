@@ -50,8 +50,8 @@ jobs:
         username: javatesting
         password: d2p93nd?>#>w21e!@@
         script: |
+          cd /home/javatesting/
           docker-compose up -d
           whoami
-          echo "$HOST"
 
        
