@@ -49,7 +49,7 @@ jobs:
         username: javatesting
         password: d2p93nd?>#>w21e!@@
         script: |
-          docker-compose up --build -d
+          docker-compose up -d
           whoami
           echo "$HOST"
 
