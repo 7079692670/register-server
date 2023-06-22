@@ -51,7 +51,7 @@ jobs:
         password: ${{secrets.SERVER_PASSWORD}}
         script: |
           whoami
-          ./deploy.sh
+          sh deploy.sh
           
 
        
