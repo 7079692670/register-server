@@ -50,8 +50,6 @@ jobs:
         username: ${{secrets.SERVER_USERNAME}}
         password: ${{secrets.SERVER_PASSWORD}}
         script: |
-#          docker-compose down
-#          docker-compose up -d
           whoami
 
        
