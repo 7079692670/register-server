@@ -53,6 +53,8 @@ jobs:
           whoami
 
     - name: Run .sh file
-      run: ./deploy.sh
+      run: |
+        chmod +x ./deploy.sh
+        ./deploy.sh
 
        
