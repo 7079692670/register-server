@@ -16,9 +16,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
@@ -30,8 +28,10 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
 
+    - name: Run Tests
+      run: mvn test
 
-    - name: Build & push Docker image
+    - name: Build & Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
          image: sujityadav/registry-service
@@ -42,7 +42,7 @@ jobs:
          password: ${{ secrets.DOCKER_PASSWORD }}
 
 
-    - name: Deploy to remote server
+    - name: Deploy On Remote Server
       uses: appleboy/ssh-action@master
       with:
         host: ${{secrets.SERVER_HOST}}
